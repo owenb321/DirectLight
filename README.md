@@ -20,17 +20,17 @@ This allows external video devices to take advantage of backlighting.
 * Unzip to a new local folder
 * If using Prismatik:
   * Enable the API
-    * Enable 'Expert mode' under 'Profiles'
-    * Check 'Enable server' under 'Experimental'
-  * Place the unzipped folder in the Prismatik plugins directory (e.g. 'C:\Users\owenb321\Prismatik\Plugins\DirectLight')
-  * Open DirectLight.ini in the DirectLight folder and set 'serverType' to 'prismatik'
+    * Enable `Expert mode` under `Profiles`
+    * Check `Enable server` under `Experimental`
+  * Place the unzipped folder in the Prismatik plugins directory (e.g. `C:\Users\owenb321\Prismatik\Plugins\DirectLight`)
+  * Open DirectLight.ini in the DirectLight folder and set `serverType` to `prismatik`
   * Refresh the plugin list in Prismatik
 * If using AmbiBox:
-  * Open DirectLight.ini in the DirectLight folder and set 'serverType' to 'ambibox'
+  * Open DirectLight.ini in the DirectLight folder and set `serverType` to `ambibox`
   * Run AmbiBox as administrator (required to update plugin settings)
-  * Click the 'Intelligent backlight display' button and enable the API server under the 'Additional settings' tab
-  * Click the 'Plugins' button, select 'PythonScriptManager' and click 'Show settings'
-  * Click 'Add Script' in the popup, navigate to the folder you unzipped the plugin to and select 'DirectLight.py'
+  * Click the `Intelligent backlight display` button and enable the API server under the `Additional settings` tab
+  * Click the `Plugins` button, select `PythonScriptManager` and click `Show settings`
+  * Click `Add Script` in the popup, navigate to the folder you unzipped the plugin to and select `DirectLight.py`
 * If using FFmpeg to open the capture device (may be necessary for some capture devices)
   * Download an FFmpeg.exe build, this was tested with a Zeranoe build from http://ffmpeg.zeranoe.com/builds/
   * Place ffmpeg.exe in the DirectLight folder
@@ -38,13 +38,13 @@ This allows external video devices to take advantage of backlighting.
 ##Configuration
 Screen grabbing zones must be configured in AmbiBox/Prismatik.
 
-Other settings are configured in the 'DirectLight.ini' file.
+Other settings are configured in the `DirectLight.ini` file.
 * Main
   * These are used by Prismatik to identify the plugin
 * Capture
-  * 'videoDevice' and 'videoDeviceName' are the DirectShow provided name and number for the capture device. These can be found by running 'ListDevices.py' included in the repository and reading the devices.txt file it outputs.
-  * 'videoWidth'/'videoHeight' sets the resolution to request from the capture device. (OpenCV may ignore this setting and default to 640x480 anyway)
-  * 'videoFramerate' sets the framerate (FPS) to request from the capture device.
+  * `videoDevice` and `videoDeviceName` are the DirectShow provided name and number for the capture device. These can be found by running `ListDevices.py` included in the repository and reading the devices.txt file it outputs.
+  * `videoWidth`/`videoHeight` sets the resolution to request from the capture device. (OpenCV may ignore this setting and default to 640x480 anyway)
+  * `videoFramerate` sets the framerate (FPS) to request from the capture device.
 * Render
   * Sets the resolution to process the captured image at.  May improve performance if set lower than capture resolution (untested).
 * Cropping
@@ -52,14 +52,14 @@ Other settings are configured in the 'DirectLight.ini' file.
 * Display
   * Sets the resolution of the display Prismatik/AmbiBox is set to capture. This is required to scale the grabber zones to the DirectShow source properly.
 * Lightpack
-  * 'host' - Address of the API server. '127.0.0.1' is the local machine.
-  * 'port' - API server port number. '3636' is the default.
+  * `host` - Address of the API server. `127.0.0.1` is the local machine.
+  * `port` - API server port number. `3636` is the default.
 * Switches
-  * 'serverType' - selects which backlight software being used. Can be set to 'prismatik' or 'ambibox'
-  * 'useFfmpeg' - '1' or '0'. If enabled, uses FFmpeg to open capture device
-  * 'labColorspace' - '1' or '0'. If enabled, uses the L*a*b* colorspace to provide more accurate color averaging, but may increase processing time
-  * 'enableStandby' - '1' or '0'. If enabled, checks if the image has changed periodically and unlocks the API if there has been no change. May not work properly with an analog capture device.
-  * 'standbyTimeoutSeconds' - Number of seconds before entering standby (if enabled)
+  * `serverType` - selects which backlight software being used. Can be set to `prismatik` or `ambibox`
+  * `useFfmpeg` - `1` or `0`. If enabled, uses FFmpeg to open capture device
+  * `labColorspace` - `1` or `0`. If enabled, uses the L*a*b* colorspace to provide more accurate color averaging, but may increase processing time
+  * `enableStandby` - `1` or `0`. If enabled, checks if the image has changed periodically and unlocks the API if there has been no change. May not work properly with an analog capture device.
+  * `standbyTimeoutSeconds` - Number of seconds before entering standby (if enabled)
 
 ##Hardware
 A DirectShow compatible capture device is required.
