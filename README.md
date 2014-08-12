@@ -1,4 +1,5 @@
 #DirectLight
+
 ##Description
 DirectLight is an AmbiBox and Prismatik plugin that allows a DirectShow capture device to be used as a grabbing source.
 This allows external video devices to take advantage of backlighting.
@@ -38,27 +39,27 @@ This allows external video devices to take advantage of backlighting.
 Screen grabbing zones must be configured in AmbiBox/Prismatik.
 
 Other settings are configured in the 'DirectLight.ini' file.
-###Main
-* These are used by Prismatik to identify the plugin
-###Capture
-* 'videoDevice' and 'videoDeviceName' are the DirectShow provided name and number for the capture device. These can be found by running 'ListDevices.py' included in the repository and reading the devices.txt file it outputs.
-* 'videoWidth'/'videoHeight' sets the resolution to request from the capture device. (OpenCV may ignore this setting and default to 640x480 anyway)
-* 'videoFramerate' sets the framerate (FPS) to request from the capture device.
-###Render
-* Sets the resolution to process the captured image at.  May improve performance if set lower than capture resolution (untested).
-###Cropping
-* Sets the number of pixels to crop from each side to remove unwanted borders that can by caused by analog capture devices
-###Display
-* Sets the resolution of the display Prismatik/AmbiBox is set to capture. This is required to scale the grabber zones to the DirectShow source properly.
-###Lightpack
-* 'host' - Address of the API server. '127.0.0.1' is the local machine.
-* 'port' - API server port number. '3636' is the default.
-###Switches
-* 'serverType' - selects which backlight software being used. Can be set to 'prismatik' or 'ambibox'
-* 'useFfmpeg' - '1' or '0'. If enabled, uses FFmpeg to open capture device
-* 'labColorspace' - '1' or '0'. If enabled, uses the L*a*b* colorspace to provide more accurate color averaging, but may increase processing time
-* 'enableStandby' - '1' or '0'. If enabled, checks if the image has changed periodically and unlocks the API if there has been no change. May not work properly with an analog capture device.
-* 'standbyTimeoutSeconds' - Number of seconds before entering standby (if enabled)
+* Main
+  * These are used by Prismatik to identify the plugin
+* Capture
+  * 'videoDevice' and 'videoDeviceName' are the DirectShow provided name and number for the capture device. These can be found by running 'ListDevices.py' included in the repository and reading the devices.txt file it outputs.
+  * 'videoWidth'/'videoHeight' sets the resolution to request from the capture device. (OpenCV may ignore this setting and default to 640x480 anyway)
+  * 'videoFramerate' sets the framerate (FPS) to request from the capture device.
+* Render
+  * Sets the resolution to process the captured image at.  May improve performance if set lower than capture resolution (untested).
+* Cropping
+  * Sets the number of pixels to crop from each side to remove unwanted borders that can by caused by analog capture devices
+* Display
+  * Sets the resolution of the display Prismatik/AmbiBox is set to capture. This is required to scale the grabber zones to the DirectShow source properly.
+* Lightpack
+  * 'host' - Address of the API server. '127.0.0.1' is the local machine.
+  * 'port' - API server port number. '3636' is the default.
+* Switches
+  * 'serverType' - selects which backlight software being used. Can be set to 'prismatik' or 'ambibox'
+  * 'useFfmpeg' - '1' or '0'. If enabled, uses FFmpeg to open capture device
+  * 'labColorspace' - '1' or '0'. If enabled, uses the L*a*b* colorspace to provide more accurate color averaging, but may increase processing time
+  * 'enableStandby' - '1' or '0'. If enabled, checks if the image has changed periodically and unlocks the API if there has been no change. May not work properly with an analog capture device.
+  * 'standbyTimeoutSeconds' - Number of seconds before entering standby (if enabled)
 
 ##Hardware
 A DirectShow compatible capture device is required.
