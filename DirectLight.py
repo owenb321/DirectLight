@@ -120,8 +120,9 @@ class DirectLight(object):
         for led in leds:  
             if led.isspace():
               continue
-            ledDims = led[2:].split(',')
-            ledIndex = int(led.split('-')[0])
+            ledParts = led.split('-')
+            ledDims = ledParts[1].split(',')
+            ledIndex = int(ledParts[0])
             left = int(float(ledDims[0])*self.xRatio)
             top = int(float(ledDims[1])*self.yRatio)
             newLedZone = ledZone(ledIndex+1, left, left+int(float(ledDims[2])*self.xRatio), top, top+int(float(ledDims[3])*self.yRatio))
